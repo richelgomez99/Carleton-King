@@ -7,7 +7,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [reelModalOpen, setReelModalOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
-  const [visibleSections, setVisibleSections] = useState(new Set(['home']))
+  const [visibleSections, setVisibleSections] = useState(new Set(['home', 'featured', 'reel', 'credits', 'skills', 'about', 'contact']))
 
   // Scroll detection for nav styling
   useEffect(() => {
@@ -254,9 +254,7 @@ export default function Home() {
       <section
         id="featured"
         data-animate
-        className={`py-16 bg-[#0f0f0f] border-y border-white/5 transition-all duration-1000 ${
-          visibleSections.has('featured') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+        className="py-16 bg-[#0f0f0f] border-y border-white/5"
       >
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-center text-[#666] text-xs tracking-[0.3em] uppercase mb-10">Recent Work</p>
@@ -286,9 +284,7 @@ export default function Home() {
       <section
         id="reel"
         data-animate
-        className={`py-24 md:py-32 transition-all duration-1000 ${
-          visibleSections.has('reel') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+        className="py-24 md:py-32"
       >
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -325,9 +321,7 @@ export default function Home() {
       <section
         id="credits"
         data-animate
-        className={`py-24 md:py-32 bg-[#0c0c0c] transition-all duration-1000 ${
-          visibleSections.has('credits') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+        className="py-24 md:py-32 bg-[#0c0c0c]"
       >
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -439,9 +433,7 @@ export default function Home() {
       <section
         id="skills"
         data-animate
-        className={`py-24 md:py-32 transition-all duration-1000 ${
-          visibleSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+        className="py-24 md:py-32"
       >
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -527,9 +519,7 @@ export default function Home() {
       <section
         id="about"
         data-animate
-        className={`py-24 md:py-32 bg-[#0c0c0c] transition-all duration-1000 ${
-          visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+        className="py-24 md:py-32 bg-[#0c0c0c]"
       >
         <div className="max-w-4xl mx-auto px-6">
           <div className="grid md:grid-cols-5 gap-12 items-center">
@@ -593,9 +583,7 @@ export default function Home() {
       <section
         id="contact"
         data-animate
-        className={`py-24 md:py-32 transition-all duration-1000 ${
-          visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+        className="py-24 md:py-32"
       >
         <div className="max-w-2xl mx-auto px-6 text-center">
           <p className="text-[#722F37] text-xs tracking-[0.3em] uppercase mb-4">Get In Touch</p>
