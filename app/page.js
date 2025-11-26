@@ -194,7 +194,7 @@ export default function Home() {
         <div className="relative z-10 text-center px-6">
           {/* Headshot */}
           <div
-            className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 rounded-full overflow-hidden border-2 border-[#722F37]/30 shadow-2xl animate-fade-in-up opacity-0"
+            className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 rounded-full overflow-hidden border-2 border-[#722F37]/30 shadow-2xl animate-fade-in-up"
           >
             <img 
               src="/headshot.png" 
@@ -205,25 +205,25 @@ export default function Home() {
 
           {/* Name */}
           <h1
-            className="text-5xl md:text-7xl lg:text-8xl tracking-wider mb-4 font-playfair font-light animate-fade-in-up opacity-0 animation-delay-200"
+            className="text-5xl md:text-7xl lg:text-8xl tracking-wider mb-4 font-playfair font-light animate-fade-in-up animation-delay-200"
           >
             CARLETON KING
           </h1>
 
           {/* Subtitle */}
-          <p className="text-[#888888] text-lg md:text-xl tracking-[0.3em] uppercase mb-2 animate-fade-in-up opacity-0 animation-delay-400">
+          <p className="text-[#888888] text-lg md:text-xl tracking-[0.3em] uppercase mb-2 animate-fade-in-up animation-delay-400">
             Actor
           </p>
 
           {/* Status line */}
-          <p className="text-[#666666] text-sm tracking-widest uppercase mb-12 animate-fade-in-up opacity-0 animation-delay-500">
+          <p className="text-[#666666] text-sm tracking-widest uppercase mb-12 animate-fade-in-up animation-delay-500">
             SAG-AFTRA Eligible • Brooklyn, NYC
           </p>
 
           {/* CTA Button */}
           <button
             onClick={() => setReelModalOpen(true)}
-            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#722F37] hover:bg-[#8B3D47] text-white tracking-widest uppercase text-sm transition-all duration-500 overflow-hidden animate-fade-in-up opacity-0 animation-delay-600"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#722F37] hover:bg-[#8B3D47] text-white tracking-widest uppercase text-sm transition-all duration-500 overflow-hidden animate-fade-in-up animation-delay-600"
           >
             <span className="relative z-10 flex items-center gap-3">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -242,7 +242,7 @@ export default function Home() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#444] animate-fade-in animate-float opacity-0 animation-delay-1500">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#444] animate-fade-in animate-float animation-delay-1500">
           <span className="text-xs tracking-widest uppercase">Scroll</span>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
