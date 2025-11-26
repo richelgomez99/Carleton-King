@@ -646,7 +646,9 @@ export default function Home() {
               <span className="text-xs tracking-wider">Actors Access</span>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/c.king_lastdragon/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex flex-col items-center gap-2 text-[#666] hover:text-[#CFB53B] transition-colors duration-300"
             >
               <div className="w-12 h-12 border border-white/10 group-hover:border-[#CFB53B]/50 flex items-center justify-center transition-colors duration-300">
