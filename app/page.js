@@ -53,22 +53,22 @@ export default function Home() {
 
   // Credits data
   const tvCredits = [
-    { title: 'DAREDEVIL', role: 'Officer Minelli', type: 'Guest', network: 'Netflix / Marvel TV' },
-    { title: 'Murder Under the Friday Night Lights', role: 'Jackboy', type: 'Portrayal', network: 'Discovery ID' },
-    { title: 'Final Moments', role: 'Dominick Lock', type: 'Portrayal', network: 'Wolf Entertainment' },
-    { title: 'Awkwafina is Nora from Queens', role: 'Disappearing Man', type: 'Featured', network: 'Comedy Central' },
-    { title: 'Marvelous Mrs. Maisel', role: 'Wedding Waiter', type: 'Featured', network: 'Amazon Studios' },
-    { title: 'Power Book III: Raising Kanan', role: 'Background', type: 'Atmosphere', network: 'Starz / G-Unit' },
+    { title: 'DAREDEVIL', role: 'Officer Minelli', type: 'Guest', network: 'Netflix / Marvel TV', imdb: 'https://www.imdb.com/title/tt3322312/' },
+    { title: 'Murder Under the Friday Night Lights', role: 'Jackboy', type: 'Portrayal', network: 'Discovery ID', imdb: 'https://www.imdb.com/title/tt21374436/' },
+    { title: 'Reborn Queen CEO, Ex-Husband Cries', role: 'Kidnapper', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt38854114/' },
+    { title: 'From XL to Extra Love', role: 'Private Security Guard', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt32420570/' },
+    { title: 'The Adjuster', role: 'S.W.A.T. Team #1', type: 'Guest', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt30224498/' },
+    { title: 'Untold Genius', role: 'Young Dwayne', type: 'Guest', network: 'TV Series', imdb: null },
   ]
 
   const filmCredits = [
-    { title: 'Stash 2: The Heartless', role: 'David', type: 'Lead', director: 'J.B. Coleman' },
-    { title: 'Brain Dead', role: 'Theo', type: 'Lead', director: 'Jamie Senat' },
-    { title: 'A Wish In Harlem', role: 'Shawn Freedom', type: 'Lead', director: 'Jahleel Jay' },
-    { title: 'R.A.W.M.', role: 'Barry', type: 'Lead', director: 'Keedem West' },
-    { title: 'Appointed', role: 'Leon Jr.', type: 'Lead', director: 'Kenya Cagle' },
-    { title: 'Colors of Kismet', role: 'Victor', type: 'Lead', director: 'Elroy Martinez Jr.' },
-    { title: 'Bloody Money', role: 'Sticky', type: 'Supporting', director: 'Brigid Turner' },
+    { title: 'Stash 2: The Heartless', role: 'David', type: 'Lead', director: 'J.B. Coleman', imdb: 'https://www.imdb.com/title/tt37961628/' },
+    { title: 'Brain Dead', role: 'Theo', type: 'Lead', director: 'Jamie Senat', imdb: 'https://www.imdb.com/title/tt14371552/' },
+    { title: 'Bloody Money', role: 'Sticky', type: 'Lead', director: 'Brigid Turner', imdb: 'https://www.imdb.com/title/tt11915804/' },
+    { title: 'Cheaters: Multiple Choice', role: 'Shadow', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt27499885/' },
+    { title: 'R.A.W.M.', role: 'Barry', type: 'Lead', director: 'Keedem West', imdb: 'https://www.imdb.com/title/tt13912628/' },
+    { title: 'Appointed', role: 'Leon Mariner', type: 'Lead', director: 'Kenya Cagle', imdb: 'https://www.imdb.com/title/tt10451786/' },
+    { title: 'Colors of Kismet', role: 'Victor', type: 'Lead', director: 'Elroy Martinez Jr.', imdb: 'https://www.imdb.com/title/tt4824302/' },
   ]
 
   const theaterCredits = [
@@ -342,9 +342,15 @@ export default function Home() {
                   className="group grid grid-cols-12 gap-4 py-4 border-b border-white/5 hover:bg-white/[0.02] transition-colors duration-300 px-2 -mx-2"
                 >
                   <div className="col-span-12 md:col-span-5">
-                    <span className="text-[#F5F5F5] group-hover:text-[#CFB53B] transition-colors duration-300">
-                      {credit.title}
-                    </span>
+                    {credit.imdb ? (
+                      <a href={credit.imdb} target="_blank" rel="noopener noreferrer" className="text-[#F5F5F5] group-hover:text-[#CFB53B] transition-colors duration-300 hover:underline">
+                        {credit.title}
+                      </a>
+                    ) : (
+                      <span className="text-[#F5F5F5] group-hover:text-[#CFB53B] transition-colors duration-300">
+                        {credit.title}
+                      </span>
+                    )}
                   </div>
                   <div className="col-span-6 md:col-span-4 text-[#888]">
                     {credit.type}: {credit.role}
@@ -368,14 +374,20 @@ export default function Home() {
                   className="group grid grid-cols-12 gap-4 py-4 border-b border-white/5 hover:bg-white/[0.02] transition-colors duration-300 px-2 -mx-2"
                 >
                   <div className="col-span-12 md:col-span-5">
-                    <span className="text-[#F5F5F5] group-hover:text-[#CFB53B] transition-colors duration-300">
-                      {credit.title}
-                    </span>
+                    {credit.imdb ? (
+                      <a href={credit.imdb} target="_blank" rel="noopener noreferrer" className="text-[#F5F5F5] group-hover:text-[#CFB53B] transition-colors duration-300 hover:underline">
+                        {credit.title}
+                      </a>
+                    ) : (
+                      <span className="text-[#F5F5F5] group-hover:text-[#CFB53B] transition-colors duration-300">
+                        {credit.title}
+                      </span>
+                    )}
                   </div>
                   <div className="col-span-6 md:col-span-4 text-[#888]">
                     {credit.type}: {credit.role}
                   </div>
-                  <div className="col-span-6 md:col-span-3 text-[#666] text-right">Dir. {credit.director}</div>
+                  <div className="col-span-6 md:col-span-3 text-[#666] text-right">{credit.director ? `Dir. ${credit.director}` : ''}</div>
                 </div>
               ))}
             </div>
@@ -609,7 +621,9 @@ export default function Home() {
           {/* Profile Links */}
           <div className="flex justify-center gap-6 mb-12">
             <a
-              href="#"
+              href="https://www.imdb.com/name/nm8586448/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex flex-col items-center gap-2 text-[#666] hover:text-[#CFB53B] transition-colors duration-300"
             >
               <div className="w-12 h-12 border border-white/10 group-hover:border-[#CFB53B]/50 flex items-center justify-center transition-colors duration-300">
