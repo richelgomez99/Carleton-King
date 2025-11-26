@@ -51,24 +51,23 @@ export default function Home() {
     setMobileMenuOpen(false)
   }
 
-  // Credits data
+  // Credits data with posters
   const tvCredits = [
-    { title: 'DAREDEVIL', role: 'Officer Minelli', type: 'Guest', network: 'Netflix / Marvel TV', imdb: 'https://www.imdb.com/title/tt3322312/' },
-    { title: 'Murder Under the Friday Night Lights', role: 'Jackboy', type: 'Portrayal', network: 'Discovery ID', imdb: 'https://www.imdb.com/title/tt16527056/' },
-    { title: 'Reborn Queen CEO, Ex-Husband Cries', role: 'Kidnapper', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt38854114/' },
-    { title: 'From XL to Extra Love', role: 'Private Security Guard', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt37533348/' },
-    { title: 'The Adjuster', role: 'S.W.A.T. Team #1', type: 'Guest', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt37359066/' },
-    { title: 'Untold Genius', role: 'Young Dwayne', type: 'Guest', network: 'TV Series', imdb: 'https://www.imdb.com/title/tt8171058/' },
+    { title: 'DAREDEVIL', role: 'Officer Minelli', type: 'Guest', network: 'Netflix / Marvel TV', imdb: 'https://www.imdb.com/title/tt3322312/', poster: '/posters/daredevil.jpg' },
+    { title: 'Murder Under the Friday Night Lights', role: 'Jackboy', type: 'Portrayal', network: 'Discovery ID', imdb: 'https://www.imdb.com/title/tt16527056/', poster: '/posters/murder-friday-night-lights.jpg' },
+    { title: 'Reborn Queen CEO, Ex-Husband Cries', role: 'Kidnapper', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt38854114/', poster: '/posters/reborn-queen-ceo.jpg' },
+    { title: 'From XL to Extra Love', role: 'Private Security Guard', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt37533348/', poster: '/posters/from-xl-to-extra-love.jpg' },
+    { title: 'The Adjuster', role: 'S.W.A.T. Team #1', type: 'Guest', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt37359066/', poster: '/posters/the-adjuster.jpg' },
+    { title: 'Untold Genius', role: 'Young Dwayne', type: 'Guest', network: 'TV Series', imdb: 'https://www.imdb.com/title/tt8171058/', poster: '/posters/untold-genius.jpg' },
   ]
 
   const filmCredits = [
-    { title: 'Stash 2: The Heartless', role: 'David', type: 'Lead', director: 'J.B. Coleman', imdb: 'https://www.imdb.com/title/tt37961628/' },
-    { title: 'Brain Dead', role: 'Theo', type: 'Lead', director: 'Jamie Senat', imdb: 'https://www.imdb.com/title/tt26593267/' },
-    { title: 'Bloody Money', role: 'Sticky', type: 'Lead', director: 'Brigid Turner', imdb: 'https://www.imdb.com/title/tt33320935/' },
-    { title: 'Cheaters: Multiple Choice', role: 'Shadow', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt34759717/' },
-    { title: 'R.A.W.M.', role: 'Barry', type: 'Lead', director: 'Keedem West', imdb: 'https://www.imdb.com/title/tt15009302/' },
-    { title: 'Appointed', role: 'Leon Mariner', type: 'Lead', director: 'Kenya Cagle', imdb: 'https://www.imdb.com/title/tt9752158/' },
-    { title: 'Colors of Kismet', role: 'Victor', type: 'Lead', director: 'Elroy Martinez Jr.', imdb: 'https://www.imdb.com/title/tt6253126/' },
+    { title: 'Brain Dead', role: 'Theo', type: 'Lead', director: 'Jamie Senat', imdb: 'https://www.imdb.com/title/tt26593267/', poster: '/posters/brain-dead.jpg' },
+    { title: 'Bloody Money', role: 'Sticky', type: 'Lead', director: 'Brigid Turner', imdb: 'https://www.imdb.com/title/tt33320935/', poster: '/posters/bloody-money.jpg' },
+    { title: 'Cheaters: Multiple Choice', role: 'Shadow', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt34759717/', poster: '/posters/cheaters.jpg' },
+    { title: 'Appointed', role: 'Leon Mariner', type: 'Lead', director: 'Kenya Cagle', imdb: 'https://www.imdb.com/title/tt9752158/', poster: '/posters/appointed.jpg' },
+    { title: 'Colors of Kismet', role: 'Victor', type: 'Lead', director: 'Elroy Martinez Jr.', imdb: 'https://www.imdb.com/title/tt6253126/', poster: '/posters/colors-of-kismet.jpg' },
+    { title: 'Manifest: The Interview', role: 'Manifest', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt20453612/', poster: '/posters/manifest-interview.jpg' },
   ]
 
   const theaterCredits = [
@@ -328,72 +327,72 @@ export default function Home() {
         data-animate
         className="py-24 md:py-32 bg-[#0c0c0c]"
       >
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-[#722F37] text-xs tracking-[0.3em] uppercase mb-4">Experience</p>
             <h2 className="text-3xl md:text-4xl tracking-wider font-playfair">Credits</h2>
           </div>
 
-          {/* Television Credits */}
-          <div className="mb-16">
-            <div className="flex items-center gap-4 mb-8">
+          {/* Television Credits - Card Grid */}
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-10">
               <h3 className="text-[#CFB53B] text-sm tracking-[0.2em] uppercase">Television</h3>
               <div className="flex-1 h-px bg-gradient-to-r from-[#CFB53B]/30 to-transparent" />
             </div>
-            <div className="space-y-0">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {tvCredits.map((credit, i) => (
-                <div
+                <a
                   key={i}
-                  className="group grid grid-cols-12 gap-4 py-4 border-b border-white/5 hover:bg-white/[0.02] transition-colors duration-300 px-2 -mx-2"
+                  href={credit.imdb}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-[2/3] bg-[#141414] overflow-hidden rounded-sm"
                 >
-                  <div className="col-span-12 md:col-span-5">
-                    {credit.imdb ? (
-                      <a href={credit.imdb} target="_blank" rel="noopener noreferrer" className="text-[#F5F5F5] group-hover:text-[#CFB53B] transition-colors duration-300 hover:underline">
-                        {credit.title}
-                      </a>
-                    ) : (
-                      <span className="text-[#F5F5F5] group-hover:text-[#CFB53B] transition-colors duration-300">
-                        {credit.title}
-                      </span>
-                    )}
+                  <img 
+                    src={credit.poster} 
+                    alt={credit.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 border border-[#CFB53B]/0 group-hover:border-[#CFB53B]/50 transition-colors duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-xs font-medium tracking-wider text-white leading-tight mb-1">{credit.title}</h4>
+                    <p className="text-[10px] text-[#CFB53B] tracking-wider">{credit.role}</p>
+                    <p className="text-[10px] text-[#666] tracking-wider mt-1">{credit.network}</p>
                   </div>
-                  <div className="col-span-6 md:col-span-4 text-[#888]">
-                    {credit.type}: {credit.role}
-                  </div>
-                  <div className="col-span-6 md:col-span-3 text-[#666] text-right">{credit.network}</div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
 
-          {/* Film Credits */}
-          <div className="mb-16">
-            <div className="flex items-center gap-4 mb-8">
+          {/* Film Credits - Card Grid */}
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-10">
               <h3 className="text-[#CFB53B] text-sm tracking-[0.2em] uppercase">Film</h3>
               <div className="flex-1 h-px bg-gradient-to-r from-[#CFB53B]/30 to-transparent" />
             </div>
-            <div className="space-y-0">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {filmCredits.map((credit, i) => (
-                <div
+                <a
                   key={i}
-                  className="group grid grid-cols-12 gap-4 py-4 border-b border-white/5 hover:bg-white/[0.02] transition-colors duration-300 px-2 -mx-2"
+                  href={credit.imdb}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-[2/3] bg-[#141414] overflow-hidden rounded-sm"
                 >
-                  <div className="col-span-12 md:col-span-5">
-                    {credit.imdb ? (
-                      <a href={credit.imdb} target="_blank" rel="noopener noreferrer" className="text-[#F5F5F5] group-hover:text-[#CFB53B] transition-colors duration-300 hover:underline">
-                        {credit.title}
-                      </a>
-                    ) : (
-                      <span className="text-[#F5F5F5] group-hover:text-[#CFB53B] transition-colors duration-300">
-                        {credit.title}
-                      </span>
-                    )}
+                  <img 
+                    src={credit.poster} 
+                    alt={credit.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 border border-[#CFB53B]/0 group-hover:border-[#CFB53B]/50 transition-colors duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-xs font-medium tracking-wider text-white leading-tight mb-1">{credit.title}</h4>
+                    <p className="text-[10px] text-[#CFB53B] tracking-wider">{credit.role}</p>
+                    <p className="text-[10px] text-[#666] tracking-wider mt-1">{credit.type}</p>
                   </div>
-                  <div className="col-span-6 md:col-span-4 text-[#888]">
-                    {credit.type}: {credit.role}
-                  </div>
-                  <div className="col-span-6 md:col-span-3 text-[#666] text-right">{credit.director ? `Dir. ${credit.director}` : ''}</div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -424,13 +423,25 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Download Resume */}
-          <div className="text-center">
+          {/* View All Works + Download Resume */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
+            <a
+              href="https://www.imdb.com/name/nm8586448/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#722F37] hover:bg-[#8B3D47] text-white tracking-widest uppercase text-sm transition-all duration-300"
+            >
+              <span className="font-bold">IMDb</span>
+              View All Works
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#888] hover:text-[#CFB53B] transition-colors duration-300 text-sm tracking-wider"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[#CFB53B]/30 text-[#CFB53B] hover:bg-[#CFB53B]/10 transition-all duration-300 text-sm tracking-wider"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -440,7 +451,7 @@ export default function Home() {
                   d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                 />
               </svg>
-              Download Full Resume (PDF)
+              Download Resume
             </a>
           </div>
         </div>
