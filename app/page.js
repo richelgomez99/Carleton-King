@@ -589,14 +589,20 @@ export default function Home() {
           <p className="text-[#722F37] text-xs tracking-[0.3em] uppercase mb-4">Get In Touch</p>
           <h2 className="text-3xl md:text-4xl tracking-wider mb-8 font-playfair">Contact</h2>
 
-          {/* Email */}
+          {/* Contact Info */}
           <div className="mb-12 p-8 bg-[#0c0c0c] border border-white/5">
-            <p className="text-[#666] text-xs tracking-widest uppercase mb-2">For Inquiries</p>
+            <p className="text-[#666] text-xs tracking-widest uppercase mb-4">For Inquiries</p>
             <a
-              href="mailto:contact@carleton-king.com"
-              className="text-xl md:text-2xl text-[#F5F5F5] hover:text-[#CFB53B] transition-colors duration-300"
+              href="mailto:dragon64818@aol.com"
+              className="block text-xl md:text-2xl text-[#F5F5F5] hover:text-[#CFB53B] transition-colors duration-300 mb-3"
             >
-              contact@carleton-king.com
+              dragon64818@aol.com
+            </a>
+            <a
+              href="tel:+19176588087"
+              className="block text-lg text-[#888] hover:text-[#CFB53B] transition-colors duration-300"
+            >
+              (917) 658-8087
             </a>
           </div>
 
