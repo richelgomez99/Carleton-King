@@ -54,21 +54,21 @@ export default function Home() {
   // Credits data
   const tvCredits = [
     { title: 'DAREDEVIL', role: 'Officer Minelli', type: 'Guest', network: 'Netflix / Marvel TV', imdb: 'https://www.imdb.com/title/tt3322312/' },
-    { title: 'Murder Under the Friday Night Lights', role: 'Jackboy', type: 'Portrayal', network: 'Discovery ID', imdb: 'https://www.imdb.com/title/tt21374436/' },
+    { title: 'Murder Under the Friday Night Lights', role: 'Jackboy', type: 'Portrayal', network: 'Discovery ID', imdb: 'https://www.imdb.com/title/tt16527056/' },
     { title: 'Reborn Queen CEO, Ex-Husband Cries', role: 'Kidnapper', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt38854114/' },
-    { title: 'From XL to Extra Love', role: 'Private Security Guard', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt32420570/' },
-    { title: 'The Adjuster', role: 'S.W.A.T. Team #1', type: 'Guest', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt30224498/' },
-    { title: 'Untold Genius', role: 'Young Dwayne', type: 'Guest', network: 'TV Series', imdb: null },
+    { title: 'From XL to Extra Love', role: 'Private Security Guard', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt37533348/' },
+    { title: 'The Adjuster', role: 'S.W.A.T. Team #1', type: 'Guest', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt37359066/' },
+    { title: 'Untold Genius', role: 'Young Dwayne', type: 'Guest', network: 'TV Series', imdb: 'https://www.imdb.com/title/tt8171058/' },
   ]
 
   const filmCredits = [
     { title: 'Stash 2: The Heartless', role: 'David', type: 'Lead', director: 'J.B. Coleman', imdb: 'https://www.imdb.com/title/tt37961628/' },
-    { title: 'Brain Dead', role: 'Theo', type: 'Lead', director: 'Jamie Senat', imdb: 'https://www.imdb.com/title/tt14371552/' },
-    { title: 'Bloody Money', role: 'Sticky', type: 'Lead', director: 'Brigid Turner', imdb: 'https://www.imdb.com/title/tt11915804/' },
-    { title: 'Cheaters: Multiple Choice', role: 'Shadow', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt27499885/' },
-    { title: 'R.A.W.M.', role: 'Barry', type: 'Lead', director: 'Keedem West', imdb: 'https://www.imdb.com/title/tt13912628/' },
-    { title: 'Appointed', role: 'Leon Mariner', type: 'Lead', director: 'Kenya Cagle', imdb: 'https://www.imdb.com/title/tt10451786/' },
-    { title: 'Colors of Kismet', role: 'Victor', type: 'Lead', director: 'Elroy Martinez Jr.', imdb: 'https://www.imdb.com/title/tt4824302/' },
+    { title: 'Brain Dead', role: 'Theo', type: 'Lead', director: 'Jamie Senat', imdb: 'https://www.imdb.com/title/tt26593267/' },
+    { title: 'Bloody Money', role: 'Sticky', type: 'Lead', director: 'Brigid Turner', imdb: 'https://www.imdb.com/title/tt33320935/' },
+    { title: 'Cheaters: Multiple Choice', role: 'Shadow', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt34759717/' },
+    { title: 'R.A.W.M.', role: 'Barry', type: 'Lead', director: 'Keedem West', imdb: 'https://www.imdb.com/title/tt15009302/' },
+    { title: 'Appointed', role: 'Leon Mariner', type: 'Lead', director: 'Kenya Cagle', imdb: 'https://www.imdb.com/title/tt9752158/' },
+    { title: 'Colors of Kismet', role: 'Victor', type: 'Lead', director: 'Elroy Martinez Jr.', imdb: 'https://www.imdb.com/title/tt6253126/' },
   ]
 
   const theaterCredits = [
