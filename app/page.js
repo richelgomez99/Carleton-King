@@ -86,10 +86,10 @@ export default function Home() {
   }
 
   const featuredCredits = [
-    { title: 'DAREDEVIL', subtitle: 'Marvel / Netflix', image: 'daredevil' },
-    { title: 'STASH 2', subtitle: 'Lead Role', image: 'stash' },
-    { title: 'DISCOVERY ID', subtitle: 'Murder Under...', image: 'discovery' },
-    { title: 'AMAZON', subtitle: 'Mrs. Maisel', image: 'amazon' },
+    { title: 'DAREDEVIL', subtitle: 'Netflix / Marvel', image: '/posters/daredevil.jpg', imdb: 'https://www.imdb.com/title/tt3322312/' },
+    { title: 'MURDER UNDER...', subtitle: 'Discovery ID', image: '/posters/murder-friday-night-lights.jpg', imdb: 'https://www.imdb.com/title/tt16527056/' },
+    { title: 'CHEATERS', subtitle: 'Lead Role', image: '/posters/cheaters.jpg', imdb: 'https://www.imdb.com/title/tt34759717/' },
+    { title: 'BRAIN DEAD', subtitle: 'Lead Role', image: '/posters/brain-dead.jpg', imdb: 'https://www.imdb.com/title/tt26593267/' },
   ]
 
   return (
@@ -260,21 +260,26 @@ export default function Home() {
           <p className="text-center text-[#666] text-xs tracking-[0.3em] uppercase mb-10">Recent Work</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {featuredCredits.map((credit, i) => (
-              <div
+              <a
                 key={credit.title}
-                className="group relative aspect-[4/3] bg-[#141414] overflow-hidden cursor-pointer"
+                href={credit.imdb}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative aspect-[2/3] bg-[#141414] overflow-hidden cursor-pointer"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
+                <img 
+                  src={credit.image} 
+                  alt={credit.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent z-10" />
                 <div className="absolute inset-0 bg-[#722F37]/0 group-hover:bg-[#722F37]/20 transition-colors duration-500 z-10" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                   <h3 className="text-sm font-medium tracking-wider">{credit.title}</h3>
                   <p className="text-[#888] text-xs tracking-wider">{credit.subtitle}</p>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center text-[#333] text-xs">
-                  {credit.image}
-                </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
