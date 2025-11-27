@@ -66,7 +66,7 @@ export default function Home() {
     { title: 'Bloody Money', role: 'Sticky', type: 'Lead', director: 'Brigid Turner', imdb: 'https://www.imdb.com/title/tt33320935/', poster: '/posters/bloody-money.jpg' },
     { title: 'Cheaters: Multiple Choice', role: 'Shadow', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt34759717/', poster: '/posters/cheaters.jpg' },
     { title: 'Appointed', role: 'Leon Mariner', type: 'Lead', director: 'Kenya Cagle', imdb: 'https://www.imdb.com/title/tt9752158/', poster: '/posters/appointed.jpg' },
-    { title: 'Colors of Kismet', role: 'Victor', type: 'Lead', director: 'Elroy Martinez Jr.', imdb: 'https://www.imdb.com/title/tt6253126/', poster: '/posters/colors-of-kismet.jpg' },
+    { title: 'Colors of Kismet', role: 'Victor', type: 'Lead', director: 'Elroy Martinez Jr.', imdb: 'https://www.imdb.com/title/tt6253126/', poster: '/posters/colors-of-kismet-poster.jpg' },
     { title: 'Manifest: The Interview', role: 'Manifest', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt20453612/', poster: '/posters/manifest-interview.jpg' },
   ]
 
