@@ -299,11 +299,17 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Video Player Placeholder */}
+          {/* Video Player with Thumbnail */}
           <div
             className="relative aspect-video bg-[#141414] cursor-pointer group overflow-hidden"
             onClick={() => setReelModalOpen(true)}
           >
+            <img 
+              src="/reel-thumbnail.jpg" 
+              alt="Carleton King Demo Reel"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-20 h-20 rounded-full bg-[#722F37]/90 group-hover:bg-[#722F37] flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                 <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
@@ -312,12 +318,9 @@ export default function Home() {
               </div>
             </div>
             <div className="absolute inset-0 border border-white/5 group-hover:border-[#722F37]/30 transition-colors duration-300" />
-            <div className="absolute inset-0 flex items-center justify-center text-[#333] text-sm tracking-wider">
-              REEL THUMBNAIL
-            </div>
           </div>
 
-          <p className="text-center text-[#666] text-sm mt-6">Runtime: 2:30 • Updated November 2025</p>
+          <p className="text-center text-[#666] text-sm mt-6">Demo Reel • November 2025</p>
         </div>
       </section>
 
@@ -626,12 +629,6 @@ export default function Home() {
             >
               dragon64818@aol.com
             </a>
-            <a
-              href="tel:+19176588087"
-              className="block text-lg text-[#888] hover:text-[#CFB53B] transition-colors duration-300"
-            >
-              (917) 658-8087
-            </a>
           </div>
 
           {/* Profile Links */}
@@ -717,12 +714,14 @@ export default function Home() {
             className="relative w-full max-w-5xl aspect-video bg-[#0A0A0A] z-10"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-[#666] text-sm tracking-wider mb-4">VIDEO PLAYER</p>
-                <p className="text-[#444] text-xs">Embed Vimeo or YouTube here</p>
-              </div>
-            </div>
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/U68SZkB3dNk?autoplay=1&rel=0"
+              title="Carleton King Demo Reel"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
         </div>
       )}
