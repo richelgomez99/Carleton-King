@@ -68,8 +68,9 @@ export default function Home() {
   ]
 
   const filmCredits = [
+    { title: 'Homewrecker', role: null, type: 'Starring', director: 'Carleton King', imdb: null, poster: '/posters/homewrecker.jpg', upcoming: true },
     { title: 'Stash 2: The Heartless', role: 'David', type: 'Lead', director: 'J.B. Coleman', imdb: 'https://www.imdb.com/title/tt37961628/', poster: '/posters/stash-2-heartless.jpg', upcoming: true },
-    { title: 'Cheaters: Fill In The Blank', role: 'Shadow', type: 'Lead', director: null, imdb: null, poster: null, upcoming: true },
+    { title: 'Cheaters: Fill In The Blank', role: 'Shadow', type: 'Lead', director: null, imdb: null, poster: '/posters/cheaters-fill-in-the-blank.jpg', upcoming: true },
     { title: 'Cheaters: Multiple Choice', role: 'Shadow', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt34759717/', poster: '/posters/cheaters.jpg' },
     { title: 'Insecurity?', role: 'James', type: 'Lead', director: null, imdb: null, poster: '/posters/insecurity.jpg' },
     { title: 'Brain Dead', role: 'Theo', type: 'Lead', director: 'Jamie Senat', imdb: 'https://www.imdb.com/title/tt26593267/', poster: '/posters/brain-dead.jpg' },
@@ -430,7 +431,7 @@ export default function Home() {
                   <div className="absolute inset-0 border border-[#CFB53B]/0 group-hover:border-[#CFB53B]/50 transition-colors duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     <h4 className="text-xs font-medium tracking-wider text-white leading-tight mb-1">{credit.title}</h4>
-                    <p className="text-[10px] text-[#CFB53B] tracking-wider">{credit.type} • {credit.role}</p>
+                    <p className="text-[10px] text-[#CFB53B] tracking-wider">{credit.role ? `${credit.type} • ${credit.role}` : credit.type}</p>
                     {credit.director && <p className="text-[10px] text-[#666] tracking-wider mt-1">Dir. {credit.director}</p>}
                   </div>
                 </Card>
