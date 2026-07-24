@@ -672,9 +672,9 @@ export default function Home() {
                   command.
                 </p>
                 <p className="text-[#888]">
-                  An accomplished filmmaker whose work has been selected for international festivals including Cannes
-                  Arts Fest and Amsterdam Movie Fest, he brings a director&apos;s eye for performance and story to every
-                  project.
+                  An award-winning filmmaker whose work has taken Best Sci-Fi honors at Top Shorts Film Festival and
+                  the New Orleans International Film Awards, with selections from Cannes Arts Fest to Amsterdam Movie
+                  Fest, he brings a director&apos;s eye for performance and story to every project.
                 </p>
               </div>
 
@@ -689,8 +689,8 @@ export default function Home() {
                   <p className="text-[#666] text-xs tracking-wider uppercase mt-1">Lead Film Roles</p>
                 </div>
                 <div>
-                  <p className="text-2xl md:text-3xl text-[#CFB53B] font-playfair">2</p>
-                  <p className="text-[#666] text-xs tracking-wider uppercase mt-1">Festival Selections</p>
+                  <p className="text-2xl md:text-3xl text-[#CFB53B] font-playfair">16</p>
+                  <p className="text-[#666] text-xs tracking-wider uppercase mt-1">Festival Honors</p>
                 </div>
               </div>
             </div>
