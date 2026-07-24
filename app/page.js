@@ -672,9 +672,8 @@ export default function Home() {
                   command.
                 </p>
                 <p className="text-[#888]">
-                  An award-winning filmmaker whose work has taken Best Sci-Fi honors at Top Shorts Film Festival and
-                  the New Orleans International Film Awards, with selections from Cannes Arts Fest to Amsterdam Movie
-                  Fest, he brings a director&apos;s eye for performance and story to every project.
+                  Through his production company, Tru Luv Ent, he also writes and produces his own award-winning
+                  projects, keeping him on set year-round and fluent in how directors work.
                 </p>
               </div>
 
@@ -685,12 +684,12 @@ export default function Home() {
                   <p className="text-[#666] text-xs tracking-wider uppercase mt-1">Years Experience</p>
                 </div>
                 <div>
-                  <p className="text-2xl md:text-3xl text-[#CFB53B] font-playfair">8+</p>
-                  <p className="text-[#666] text-xs tracking-wider uppercase mt-1">Lead Film Roles</p>
+                  <p className="text-2xl md:text-3xl text-[#CFB53B] font-playfair">11</p>
+                  <p className="text-[#666] text-xs tracking-wider uppercase mt-1">TV Credits</p>
                 </div>
                 <div>
-                  <p className="text-2xl md:text-3xl text-[#CFB53B] font-playfair">16</p>
-                  <p className="text-[#666] text-xs tracking-wider uppercase mt-1">Festival Honors</p>
+                  <p className="text-2xl md:text-3xl text-[#CFB53B] font-playfair">8+</p>
+                  <p className="text-[#666] text-xs tracking-wider uppercase mt-1">Lead Film Roles</p>
                 </div>
               </div>
             </div>
