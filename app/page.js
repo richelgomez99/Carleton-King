@@ -68,10 +68,10 @@ export default function Home() {
   ]
 
   const filmCredits = [
-    { title: 'Stash 2: The Heartless', role: 'David', type: 'Lead', director: 'J.B. Coleman', imdb: 'https://www.imdb.com/title/tt37961628/', poster: null, upcoming: true },
+    { title: 'Stash 2: The Heartless', role: 'David', type: 'Lead', director: 'J.B. Coleman', imdb: 'https://www.imdb.com/title/tt37961628/', poster: '/posters/stash-2-heartless.jpg', upcoming: true },
     { title: 'Cheaters: Fill In The Blank', role: 'Shadow', type: 'Lead', director: null, imdb: null, poster: null, upcoming: true },
     { title: 'Cheaters: Multiple Choice', role: 'Shadow', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt34759717/', poster: '/posters/cheaters.jpg' },
-    { title: 'Insecurity?', role: 'James', type: 'Lead', director: null, imdb: null, poster: null },
+    { title: 'Insecurity?', role: 'James', type: 'Lead', director: null, imdb: null, poster: '/posters/insecurity.jpg' },
     { title: 'Brain Dead', role: 'Theo', type: 'Lead', director: 'Jamie Senat', imdb: 'https://www.imdb.com/title/tt26593267/', poster: '/posters/brain-dead.jpg' },
     { title: 'A Wish In Harlem', role: 'Shawn Freedom', type: 'Lead', director: 'Jahleel Jay', imdb: null, poster: null },
     { title: 'Appointed', role: 'Leon Mariner', type: 'Lead', director: 'Kenya Cagle', imdb: 'https://www.imdb.com/title/tt9752158/', poster: '/posters/appointed.jpg' },
