@@ -6,8 +6,9 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [reelModalOpen, setReelModalOpen] = useState(false)
+  const [lightboxPhoto, setLightboxPhoto] = useState(null)
   const [activeSection, setActiveSection] = useState('home')
-  const [visibleSections, setVisibleSections] = useState(new Set(['home', 'featured', 'reel', 'credits', 'skills', 'about', 'contact']))
+  const [visibleSections, setVisibleSections] = useState(new Set(['home', 'featured', 'reel', 'credits', 'skills', 'photos', 'about', 'contact']))
 
   // Scroll detection for nav styling
   useEffect(() => {
@@ -15,7 +16,7 @@ export default function Home() {
       setScrolled(window.scrollY > 50)
 
       // Determine active section for nav highlighting
-      const sections = ['home', 'reel', 'credits', 'about', 'contact']
+      const sections = ['home', 'reel', 'credits', 'photos', 'about', 'contact']
       for (const section of [...sections].reverse()) {
         const el = document.getElementById(section)
         if (el && window.scrollY >= el.offsetTop - 100) {
@@ -53,8 +54,13 @@ export default function Home() {
 
   // Credits data with posters
   const tvCredits = [
-    { title: 'DAREDEVIL', role: 'Officer Minelli', type: 'Guest', network: 'Netflix / Marvel TV', imdb: 'https://www.imdb.com/title/tt3322312/', poster: '/posters/daredevil.jpg' },
-    { title: 'Murder Under the Friday Night Lights', role: 'Jackboy', type: 'Portrayal', network: 'Discovery ID', imdb: 'https://www.imdb.com/title/tt16527056/', poster: '/posters/murder-friday-night-lights.jpg' },
+    { title: 'DAREDEVIL', role: 'Officer Minelli', type: 'Guest Star', network: 'Netflix / Marvel TV', imdb: 'https://www.imdb.com/title/tt3322312/', poster: '/posters/daredevil.jpg' },
+    { title: 'New York Homicide', role: 'James Moore', type: 'Principal', network: 'Oxygen / Good Caper Content', imdb: 'https://www.imdb.com/title/tt16494566/', poster: '/posters/new-york-homicide.jpg' },
+    { title: 'Final Moments', role: 'Dominick Lock', type: 'Principal', network: 'Oxygen / Wolf Entertainment', imdb: 'https://www.imdb.com/title/tt19800106/', poster: '/posters/final-moments.jpg' },
+    { title: 'Murder Under the Friday Night Lights', role: 'Jackboy', type: 'Principal', network: 'Discovery ID / Lion TV', imdb: 'https://www.imdb.com/title/tt16527056/', poster: '/posters/murder-friday-night-lights.jpg' },
+    { title: 'Street Justice: The Bronx', role: 'Uniform Officer', type: 'Principal', network: 'Jupiter Entertainment', imdb: 'https://www.imdb.com/title/tt7391648/', poster: '/posters/street-justice-bronx.jpg' },
+    { title: 'Why Not Just Tell The Truth', role: 'Jason Marcell', type: 'Series Lead', network: 'Tru Luv Entertainment', imdb: null, poster: null },
+    { title: 'Gifted & Uplifted', role: 'Host', type: 'Host', network: 'Live Write Productions', imdb: null, poster: null },
     { title: 'Reborn Queen CEO, Ex-Husband Cries', role: 'Kidnapper', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt38854114/', poster: '/posters/reborn-queen-ceo.jpg' },
     { title: 'From XL to Extra Love', role: 'Private Security Guard', type: 'Recurring', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt37533348/', poster: '/posters/from-xl-to-extra-love.jpg' },
     { title: 'The Adjuster', role: 'S.W.A.T. Team #1', type: 'Guest', network: 'TV Mini Series', imdb: 'https://www.imdb.com/title/tt37359066/', poster: '/posters/the-adjuster.jpg' },
@@ -62,27 +68,41 @@ export default function Home() {
   ]
 
   const filmCredits = [
-    { title: 'Brain Dead', role: 'Theo', type: 'Lead', director: 'Jamie Senat', imdb: 'https://www.imdb.com/title/tt26593267/', poster: '/posters/brain-dead.jpg' },
-    { title: 'Bloody Money', role: 'Sticky', type: 'Lead', director: 'Brigid Turner', imdb: 'https://www.imdb.com/title/tt33320935/', poster: '/posters/bloody-money.jpg' },
+    { title: 'Stash 2: The Heartless', role: 'David', type: 'Lead', director: 'J.B. Coleman', imdb: 'https://www.imdb.com/title/tt37961628/', poster: null, upcoming: true },
+    { title: 'Cheaters: Fill In The Blank', role: 'Shadow', type: 'Lead', director: null, imdb: null, poster: null, upcoming: true },
     { title: 'Cheaters: Multiple Choice', role: 'Shadow', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt34759717/', poster: '/posters/cheaters.jpg' },
+    { title: 'Insecurity?', role: 'James', type: 'Lead', director: null, imdb: null, poster: null },
+    { title: 'Brain Dead', role: 'Theo', type: 'Lead', director: 'Jamie Senat', imdb: 'https://www.imdb.com/title/tt26593267/', poster: '/posters/brain-dead.jpg' },
+    { title: 'A Wish In Harlem', role: 'Shawn Freedom', type: 'Lead', director: 'Jahleel Jay', imdb: null, poster: null },
     { title: 'Appointed', role: 'Leon Mariner', type: 'Lead', director: 'Kenya Cagle', imdb: 'https://www.imdb.com/title/tt9752158/', poster: '/posters/appointed.jpg' },
     { title: 'Colors of Kismet', role: 'Victor', type: 'Lead', director: 'Elroy Martinez Jr.', imdb: 'https://www.imdb.com/title/tt6253126/', poster: '/posters/colors-of-kismet-poster.jpg' },
+    { title: 'Bloody Money', role: 'Sticky', type: 'Supporting', director: 'Brigid Turner', imdb: 'https://www.imdb.com/title/tt33320935/', poster: '/posters/bloody-money.jpg' },
     { title: 'Manifest: The Interview', role: 'Manifest', type: 'Lead', director: null, imdb: 'https://www.imdb.com/title/tt20453612/', poster: '/posters/manifest-interview.jpg' },
   ]
 
   const theaterCredits = [
-    { title: 'Stage Four', role: 'Son', venue: 'Blue Pearl Theatrics', festival: 'Defiance Festival' },
-    { title: 'Maxine', role: 'Brady', venue: 'Blue Pearl Theatrics', festival: 'Shattered Festival' },
-    { title: 'Blue Wall of Silence', role: 'T.J.', venue: 'Blue Pearl Theatrics', festival: 'Passion of Power' },
-    { title: 'Two Trains Running', role: 'Hambone', venue: 'Bed Stuy Theatre Group', festival: null },
-    { title: "My Brother's Keeper", role: 'Basil', venue: 'Dr. HeruKhuti', festival: null },
+    { title: 'Stage Four', role: 'Son', billing: 'Lead', venue: 'Blue Pearl Theatrics', festival: 'Defiance Festival' },
+    { title: 'Maxine', role: 'Brady', billing: 'Lead', venue: 'Blue Pearl Theatrics', festival: 'Shattered Festival' },
+    { title: 'Blue Wall of Silence', role: 'T.J.', billing: 'Lead', venue: 'Blue Pearl Theatrics', festival: 'Passion of Power' },
+    { title: 'Two Trains Running', role: 'Hambone', billing: 'Ensemble', venue: 'Bed Stuy Theatre Group', festival: null },
+    { title: 'Oh What A Knight', role: 'Miguel Villanueva', billing: 'Lead', venue: 'TeaCup Productions', festival: null },
+    { title: "My Brother's Keeper", role: 'Basil', billing: 'Lead', venue: 'Dr. HeruKhuti', festival: null },
   ]
 
   const skills = {
-    combat: ['Martial Arts', 'Jiu-Jitsu', 'Judo', 'Kendo', 'Boxing', 'Kickboxing', 'Firearms', 'Stunts'],
+    combat: ['Martial Arts', 'Jiu-Jitsu', 'Judo', 'Kendo', 'Katana', 'MMA', 'Boxing', 'Kickboxing', 'Wrestling', 'Firearms', 'Stunts'],
     movement: ['Parkour', 'Hip Hop Dance', 'Jazz Dance', 'Ice Skating'],
     voice: ['Tenor', 'Voiceover', 'Rapper', 'NYC Accent', 'Southern Accent'],
+    other: ['Drums', 'Teleprompter', 'Hosting', 'Archery', 'Billiards', 'Baseball', 'Basketball', 'Bowling', 'Volleyball'],
   }
+
+  const galleryPhotos = [
+    { src: '/photos/carleton-bw.jpg', alt: 'Carleton King black and white full-length portrait' },
+    { src: '/photos/carleton-leather.jpg', alt: 'Carleton King in a black snakeskin jacket' },
+    { src: '/photos/carleton-street.jpg', alt: 'Carleton King night street portrait in white jacket' },
+    { src: '/photos/carleton-formal.jpg', alt: 'Carleton King in a navy dress shirt' },
+    { src: '/photos/carleton-portrait.jpg', alt: 'Carleton King close-up portrait' },
+  ]
 
   const featuredCredits = [
     { title: 'DAREDEVIL', subtitle: 'Netflix / Marvel', image: '/posters/daredevil.jpg', imdb: 'https://www.imdb.com/title/tt3322312/' },
@@ -117,7 +137,7 @@ export default function Home() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {['Reel', 'Credits', 'About', 'Contact'].map((item) => (
+            {['Reel', 'Credits', 'Photos', 'About', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
@@ -157,7 +177,7 @@ export default function Home() {
           }`}
         >
           <div className="px-6 py-8 flex flex-col gap-6">
-            {['Reel', 'Credits', 'About', 'Contact'].map((item, i) => (
+            {['Reel', 'Credits', 'Photos', 'About', 'Contact'].map((item, i) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
@@ -343,28 +363,35 @@ export default function Home() {
               <div className="flex-1 h-px bg-gradient-to-r from-[#CFB53B]/30 to-transparent" />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {tvCredits.map((credit, i) => (
-                <a
+              {tvCredits.map((credit, i) => {
+                const Card = credit.imdb ? 'a' : 'div'
+                return (
+                <Card
                   key={i}
-                  href={credit.imdb}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(credit.imdb ? { href: credit.imdb, target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="group relative aspect-[2/3] bg-[#141414] overflow-hidden rounded-sm"
                 >
-                  <img 
-                    src={credit.poster} 
-                    alt={credit.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  {credit.poster ? (
+                    <img
+                      src={credit.poster}
+                      alt={credit.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#1c1416] via-[#141414] to-[#0c0c0c] flex items-center justify-center p-4">
+                      <span className="text-3xl text-[#722F37]/60 font-playfair">{credit.title.charAt(0)}</span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute inset-0 border border-[#CFB53B]/0 group-hover:border-[#CFB53B]/50 transition-colors duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     <h4 className="text-xs font-medium tracking-wider text-white leading-tight mb-1">{credit.title}</h4>
-                    <p className="text-[10px] text-[#CFB53B] tracking-wider">{credit.role}</p>
+                    <p className="text-[10px] text-[#CFB53B] tracking-wider">{credit.type === 'Host' ? 'Host' : `${credit.type} • ${credit.role}`}</p>
                     <p className="text-[10px] text-[#666] tracking-wider mt-1">{credit.network}</p>
                   </div>
-                </a>
-              ))}
+                </Card>
+                )
+              })}
             </div>
           </div>
 
@@ -375,28 +402,40 @@ export default function Home() {
               <div className="flex-1 h-px bg-gradient-to-r from-[#CFB53B]/30 to-transparent" />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {filmCredits.map((credit, i) => (
-                <a
+              {filmCredits.map((credit, i) => {
+                const Card = credit.imdb ? 'a' : 'div'
+                return (
+                <Card
                   key={i}
-                  href={credit.imdb}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(credit.imdb ? { href: credit.imdb, target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="group relative aspect-[2/3] bg-[#141414] overflow-hidden rounded-sm"
                 >
-                  <img 
-                    src={credit.poster} 
-                    alt={credit.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  {credit.poster ? (
+                    <img
+                      src={credit.poster}
+                      alt={credit.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#1c1416] via-[#141414] to-[#0c0c0c] flex items-center justify-center p-4">
+                      <span className="text-3xl text-[#722F37]/60 font-playfair">{credit.title.charAt(0)}</span>
+                    </div>
+                  )}
+                  {credit.upcoming && (
+                    <span className="absolute top-2 right-2 z-10 px-2 py-0.5 bg-[#CFB53B] text-[#0A0A0A] text-[9px] tracking-widest uppercase font-medium">
+                      Upcoming
+                    </span>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute inset-0 border border-[#CFB53B]/0 group-hover:border-[#CFB53B]/50 transition-colors duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     <h4 className="text-xs font-medium tracking-wider text-white leading-tight mb-1">{credit.title}</h4>
-                    <p className="text-[10px] text-[#CFB53B] tracking-wider">{credit.role}</p>
-                    <p className="text-[10px] text-[#666] tracking-wider mt-1">{credit.type}</p>
+                    <p className="text-[10px] text-[#CFB53B] tracking-wider">{credit.type} • {credit.role}</p>
+                    {credit.director && <p className="text-[10px] text-[#666] tracking-wider mt-1">Dir. {credit.director}</p>}
                   </div>
-                </a>
-              ))}
+                </Card>
+                )
+              })}
             </div>
           </div>
 
@@ -419,7 +458,7 @@ export default function Home() {
                     </span>
                     {credit.festival && <span className="ml-2 text-xs text-[#722F37]">({credit.festival})</span>}
                   </div>
-                  <div className="col-span-6 md:col-span-4 text-[#888]">Lead: {credit.role}</div>
+                  <div className="col-span-6 md:col-span-4 text-[#888]">{credit.billing}: {credit.role}</div>
                   <div className="col-span-6 md:col-span-3 text-[#666] text-right">{credit.venue}</div>
                 </div>
               ))}
@@ -520,6 +559,21 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
+            {/* Other */}
+            <div className="md:col-span-2">
+              <h4 className="text-[#888] text-xs tracking-[0.2em] uppercase mb-4">Other</h4>
+              <div className="flex flex-wrap gap-2">
+                {skills.other.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-4 py-2 bg-white/5 border border-white/10 text-sm tracking-wider text-[#888] hover:text-[#F5F5F5] hover:border-white/20 transition-colors duration-300 cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Physical Stats */}
@@ -542,6 +596,39 @@ export default function Home() {
                 <p className="text-xl">Black</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photos Section */}
+      <section
+        id="photos"
+        data-animate
+        className="py-24 md:py-32"
+      >
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-[#722F37] text-xs tracking-[0.3em] uppercase mb-4">Gallery</p>
+            <h2 className="text-3xl md:text-4xl tracking-wider font-playfair">Photos</h2>
+          </div>
+
+          <div className="columns-2 md:columns-3 gap-4">
+            {galleryPhotos.map((photo) => (
+              <button
+                key={photo.src}
+                onClick={() => setLightboxPhoto(photo)}
+                className="group relative block w-full mb-4 break-inside-avoid overflow-hidden bg-[#141414] cursor-zoom-in"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-[#722F37]/0 group-hover:bg-[#722F37]/15 transition-colors duration-500" />
+                <div className="absolute inset-0 border border-white/5 group-hover:border-[#CFB53B]/40 transition-colors duration-300" />
+              </button>
+            ))}
           </div>
         </div>
       </section>
@@ -695,6 +782,29 @@ export default function Home() {
           <p className="text-[#444] text-sm">Brooklyn, NYC • SAG-AFTRA Eligible</p>
         </div>
       </footer>
+
+      {/* Photo Lightbox */}
+      {lightboxPhoto && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setLightboxPhoto(null)}>
+          <div className="absolute inset-0 bg-black/95 backdrop-blur-sm" />
+
+          <button
+            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-10"
+            onClick={() => setLightboxPhoto(null)}
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          <img
+            src={lightboxPhoto.src}
+            alt={lightboxPhoto.alt}
+            className="relative z-10 max-h-[90vh] max-w-[92vw] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       {/* Reel Modal */}
       {reelModalOpen && (
